@@ -15,7 +15,6 @@ func _ready():
 
 func _physics_process(delta):
 	var new_point = target.global_position
-	print(new_point)
 	if ((new_point - last_point).length_squared() >= pow(step_size,2)):
 		add_point(new_point)
 	if get_point_count() > max_points:
