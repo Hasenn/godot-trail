@@ -1,0 +1,29 @@
+[gd_resource type="ShaderMaterial" load_steps=8 format=2]
+
+[ext_resource path="res://trail_shader.shader" type="Shader" id=1]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.874074, 1 )
+colors = PoolColorArray( 1, 0, 0, 0, 0.835294, 0.435294, 0.278431, 0.694118, 0.577793, 0.824219, 0.499039, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="OpenSimplexNoise" id=3]
+
+[sub_resource type="NoiseTexture" id=4]
+noise = SubResource( 3 )
+
+[sub_resource type="Gradient" id=5]
+offsets = PoolRealArray( 0, 0.488889, 0.992593 )
+colors = PoolColorArray( 0.804774, 0.804774, 0.804774, 1, 0, 0, 0, 1, 0.927536, 0.927536, 0.927536, 1 )
+
+[sub_resource type="GradientTexture" id=6]
+gradient = SubResource( 5 )
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/pulse_speed = 2.0
+shader_param/noise = SubResource( 4 )
+shader_param/gradient = SubResource( 2 )
+shader_param/pulse_gradient = SubResource( 6 )

@@ -21,7 +21,8 @@ func _physics_process(delta):
 		remove_point(0)
 	timer += delta
 	if timer > kill_every:
-		remove_point(0)
+		if get_point_count() >= 1:
+			remove_point(0)
 		timer = 0
 
 	
